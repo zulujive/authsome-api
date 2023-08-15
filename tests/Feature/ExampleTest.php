@@ -14,6 +14,6 @@ class ExampleTest extends TestCase
      */
     public function test_email_works(): void
     {
-        Mail::to('oodiladido@gmail.com')->send(new WelcomeEmail());
+        Mail::raw('Hello World!', function($msg) {$msg->to('oodiladido@gmail.com')->subject('Test Email'); });
     }
 }
